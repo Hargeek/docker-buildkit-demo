@@ -7,7 +7,7 @@ RUN python -m venv --copies /www/venv
 COPY requirements.txt .
 
 RUN . /www/venv/bin/activate \
-    && pip install --upgrade pip \
+    && pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple \
     && pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 FROM python:3.9-slim-buster
