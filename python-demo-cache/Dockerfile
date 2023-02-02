@@ -12,7 +12,7 @@ ENV ANOTHER_FAKE_ENV fake_env_for_cached
 RUN --mount=type=cache,target=/root/.cache/pip \
     && . /www/venv/bin/activate \
     && pip install --upgrade pip \
-    && pip install -r requirements.txt \
+    && pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple \
 
 FROM python:3.9-slim-buster
 
