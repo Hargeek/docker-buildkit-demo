@@ -1,0 +1,6 @@
+FROM alpine
+ENV TEST 1
+RUN ln -s /var/cache/apk /etc/apk/cache
+RUN apk update \
+    && apk add build-base alpine-sdk python3-dev \
+    && rm -rf /var/cache/apk
